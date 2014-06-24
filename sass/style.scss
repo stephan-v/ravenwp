@@ -1,0 +1,372 @@
+/* 
+	Theme Name: Raven
+	Theme URI: http://www.ravenwebdesign.nl
+	Description: A custom portfolio theme
+	Version: 0.1
+	Author: Stephan de Vries
+	Author URI: http://www.ravenwebdesign.nl
+*/
+
+@import "partials/base";
+
+/*  #General Styles
+================================================== */
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Arial';
+	-webkit-font-smoothing: antialiased;
+	background: #f0f0f0;
+}
+a {
+	text-decoration: none;
+	color: #555555;
+	@include transition(300ms);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+strong, .strong {
+	font-weight: bold;
+}
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+em {
+	font-style: italic;
+}
+
+/*---- Responsive Images and Video's -----*/
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+    iframe, object, embed {
+    	position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    padding-bottom: 20px;
+    }
+}
+textarea:focus, input:focus {
+	outline: 0;
+	border: 2px solid tomato;
+}
+[class^="fa"] {
+	color: #201f1f;
+}
+blockquote {
+	border-left: 5px solid tomato;
+	padding-left: 25px;
+	margin: 0 -75px;
+	font-style: italic;
+}
+.vert-text {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 50px;
+}
+.content {
+	padding: 50px 0;
+}
+.btn {
+	padding: 5px 0;
+	width: 100px;
+	@include background-image(linear-gradient(lighten(tomato, 8%), tomato));
+	border: 1px solid darken(tomato, 5%);
+	text-align: center;
+	margin-top: 10px;
+	display: block;
+	color: #FFF;
+	@include border-radius(3px);	
+	&:hover {
+		@include background-image(linear-gradient(lighten(tomato, 5%), tomato));
+	}
+	a {
+		color: #FFF;
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+}
+.image-holder {
+	display: inline-block;
+	margin-bottom: -9px;
+	background: #000;
+}
+.image-holder img:hover {
+	@include opacity(0.5);	
+	@include transition-duration(500ms);
+}
+
+
+/*  #Navigation
+================================================== */
+
+.header-navigation {
+	position: absolute;
+	z-index: 5;
+	margin-top: 25px;
+}
+.menu ul {
+	line-height: 70px;
+	float: right;
+}
+.menu ul li {
+	float: left;
+	padding: 0 25px;
+	a {
+		@include adjust-font-size-to(13px);
+		font-weight: bold;
+		color: #FFF;
+		padding: 0 10px;
+		&:hover {
+			text-decoration: none;
+			color: lightgrey;
+		}
+	}
+}
+.menu ul li:last-child {
+	padding-right: 0;
+}
+.logo {
+	margin-top: 10px;
+	background: url("images/ravenwhite.png");
+	background-size: cover;
+	height: 45px;
+	width: 90px;
+	display: inline-block;
+	float: left;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+/*  #Main Header
+================================================== */
+
+.hero-unit {	
+	display: table;
+	width: 100%;	
+}
+.hero-unit.index {
+	height: 600px;
+	background: url("images/picjumbo7.jpg") center center fixed no-repeat;		
+	@include background-size('cover');
+	.slogan h1 {
+		color: #FFF;
+		text-shadow: none;
+	}
+	.slogan p {
+		color: #C4C4C4;
+		@include adjust-font-size-to(14px);
+	}
+}
+.hero-unit.work {
+	height: 400px;
+	background: url("images/picjumbo5.jpg") center -250px fixed no-repeat;		
+	@include background-size('cover');
+	.slogan h1 {
+		color: #FFF;
+		text-shadow: none;
+	}
+}
+.hero-unit.blog {
+	height: 400px;
+	background: url("images/dreamcatcher50.jpg") top fixed;			
+	@include background-size('cover');
+	.slogan h1 {
+		color: #FFF;
+		text-shadow: none;
+	}
+}
+.slogan h1 {
+	margin: 0;
+	font-weight: 300;
+	@include adjust-font-size-to(40px);
+}
+.logo-white {
+	width: 310px;
+	height: 200px;
+	background: url("images/ravenwhite.png");
+	margin: 0 auto;
+}
+.header {
+	h1 {
+		@include adjust-font-size-to(54px);
+		margin: 0em;
+		font-family: 'PT Sans', sans-serif;
+		color: #FFF;
+	}
+	p {
+		@include text-shadow(0px 0px 15px #000);
+		@include adjust-font-size-to(20px);
+		margin: 0;
+		color: #FFF;
+		font-weight: 300;
+	}
+}
+
+
+/*  #Categories section homepage
+================================================== */
+
+.categories {
+	@include pie-clearfix;
+	margin: 75px 0 25px 0;
+	.column-3 {		
+		@include box-shadow(0 2px 2px #e6e6e6);
+	}
+	h1 {
+		margin-top: 1em;
+		text-align: center;
+	}
+	.description {
+		text-align: center;
+		padding: 25px;
+	}
+}
+
+
+/*  #Clients section homepage
+================================================== */
+
+.clients img {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.clients img:hover {
+	 @include transition-duration(500ms);
+	 cursor: pointer;
+	-webkit-filter: none;
+	-moz-filter: none;
+	filter: none;
+}
+
+
+/*  #Contactpage
+================================================== */
+
+.contact-header {
+	position: relative;
+}
+.contact form .submit { 
+	border: none;
+	background: tomato;
+	color: #FFF;
+	font-weight: bold;
+	padding-left: 0;
+}
+.contact form h1 {
+	text-align: center;
+	color: #FFF;
+	margin: 1em 0;
+}
+.contact form input {
+	height: 65px;
+	width: 100%;
+	padding-left: 5%;
+	margin-bottom: 20px;
+}
+.contact form textarea {
+	width: 100%;
+	height: 180px;
+	padding: 2.5%;
+	margin-bottom: 20px;
+	font-family: "Arial";
+}
+
+/*  #Sidebar
+================================================== */
+
+.sidebar {
+	background: white;
+	padding: 30px;
+	@include box-shadow(0 2px 2px #e6e6e6);
+}
+.sidebar .sidebar-widget {
+	margin-bottom: 15px;
+	h2 {
+		margin-bottom: 5px;
+	}
+}
+#searchform #s {
+	width: 100%;
+	padding: 5px;
+}
+#searchform #searchsubmit {
+	@extend .btn;
+	border: 0;
+	color: #FFF;
+}
+#searchform .screen-reader-text {
+	display: none;
+}
+
+/*  #Diensten
+================================================== */
+
+.services {
+	.row {
+		margin: 125px 0;
+	}
+	h2 {
+		font-size: 2.2em;
+		line-height: 1.4em;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		color: #373737;
+	}
+	p {
+		@include adjust-font-size-to(14px);
+		line-height: 2.2em;
+	}
+	.text {
+		float: left;
+		width: 50%;
+	}
+	.image {
+		float: right;
+		width: 40%;
+	}
+	.alternate {
+		.text {
+			float: right;
+			text-align: right;
+			width: 60%;
+		}
+		.image {
+			float: left;
+			width: 30%;
+		}
+		.btn {
+			float: right;
+		}
+	}
+}
+
+
+@import "partials/ravengrid";

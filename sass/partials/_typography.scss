@@ -1,0 +1,32 @@
+/*  #Vertical Rhythm
+================================================== */
+
+$base-font-size: 13px;
+$base-line-height: 28px;
+@include establish-baseline;
+
+/*  #General typography styles
+================================================== */
+
+p {
+	margin-bottom: 1em;
+	color: #777777;
+	font-family: 'Open Sans', sans-serif;
+}
+h1 {
+	@include adjust-font-size-to(18px);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	margin-bottom: 1em;
+	color: #555;
+}
+h2 {
+	@extend h1;
+	@include adjust-font-size-to(16px);
+	color: #959595;
+	margin-bottom: 1em;
+}
+h3 {
+	@extend h1;
+	@include adjust-font-size-to(16px);
+}
